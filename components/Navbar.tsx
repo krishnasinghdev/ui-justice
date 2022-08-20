@@ -6,8 +6,7 @@ import { ImCross } from 'react-icons/im';
 
 const path = [
   { href: '/', title: 'Home' },
-  { href: '/practice', title: 'Practice' },
-  { href: '/service', title: 'Service' },
+  { href: '/practice', title: 'Practice Areas' },
   { href: '/attorney', title: 'Attorney' },
   { href: '/about', title: 'About' },
   { href: '/contact', title: 'Contact' },
@@ -21,7 +20,13 @@ export default function Navbar() {
     <>
       <nav className='absolute w-full py-4 flex justify-between px-4 lg:justify-around items-center  '>
         <Link href={'/'}>
-          <a className='text-black font-bold text-xl '>Justice.</a>
+          <a
+            className={`${
+              router.asPath === '/' ? 'text-black' : 'text-white'
+            } font-bold text-xl`}
+          >
+            Justice<span className='text-just'>.</span>{' '}
+          </a>
         </Link>
 
         {!showMenu && (
@@ -36,7 +41,7 @@ export default function Navbar() {
             <Link href={href} key={index}>
               <a
                 className={
-                  router.asPath === href ? 'text-black' : 'hover:text-black '
+                  router.asPath === href ? 'text-white' : 'hover:text-black '
                 }
               >
                 {title}
@@ -49,7 +54,7 @@ export default function Navbar() {
       {/* MOBILE MENU */}
 
       {showMenu && (
-        <aside className='w-[60vw] h-screen fixed bg-white transition flex flex-col gap-5 p-4 duration-1000   right-0'>
+        <aside className='w-[60vw] h-screen fixed bg-white transition flex flex-col gap-5 p-4 duration-1000  z-40 right-0'>
           <ImCross
             onClick={() => setShowMenu(false)}
             className='self-end mr-4 text-2xl'

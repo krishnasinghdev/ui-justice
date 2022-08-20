@@ -1,79 +1,55 @@
 import type { NextPage } from 'next';
 import Hero from '../components/Hero';
+import Counter from '../components/Counter';
+import ClientCard from '../components/ClientCard';
+import Practice from '../components/Practice';
+import CallUs from '../components/CallUs';
+import ExpertiseCard from '../components/ExpertiseCard';
 import { RiSuitcaseLine } from 'react-icons/ri';
-import { BsPeople } from 'react-icons/bs';
-import { HiOutlineChatAlt2 } from 'react-icons/hi';
-import { ImTarget } from 'react-icons/im';
+import { FiTarget } from 'react-icons/fi';
+import { BiTargetLock } from 'react-icons/bi';
+import { GiChessRook } from 'react-icons/gi';
 const Home: NextPage = () => {
   return (
     <>
       <Hero />
-      <main className='bg-[#37373F] py-[8rem] grid lg:grid-cols-2 lg:justify-items-center  px-[2rem] xl:px-[8rem] gap-6'>
-        <div>
-          <h1 className='text-5xl mb-4 font- text-white'>
-            Our <span className='text-just font-extrabold'>Practice Areas</span>
-          </h1>
-          <p className='text-gray-300 py-2'>
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts. Separated they
-            live in. Separated they live in Bookmarksgrove right at the coast of
-            the Semantics, a large language ocean.
-          </p>
-          <button className='bg-just rounded-full text-white font-semibold py-2 px-4 mt-8'>
-            LEARN MORE
-          </button>
-        </div>
-        <div>
-          <div className='flex gap-4 mb-4'>
-            <p className='inline-block bg-[#5F5F65] self-center rounded-full p-4'>
-              <RiSuitcaseLine className='text-white text-2xl ' />
-            </p>
-            <div>
-              <h2 className='text-just font-semibold text-lg'>
-                Banking and Finance Law
-              </h2>
-              <p className='text-gray-300 '>
-                Far far away, behind the word mountains, far from the countries
-              </p>
-            </div>
-          </div>
-          <div className='flex gap-4 mb-4'>
-            <p className='inline-block bg-[#5F5F65] self-center rounded-full p-4'>
-              <BsPeople className='text-white text-2xl ' />
-            </p>
-            <div>
-              <h2 className='text-just font-semibold text-lg'>
-                Commercial Law
-              </h2>
-              <p className='text-gray-300 py-1'>
-                Far far away, behind the word mountains, far from the countries
-              </p>
-            </div>
-          </div>
-          <div className='flex gap-4 mb-4'>
-            <p className='inline-block bg-[#5F5F65] self-center rounded-full p-4'>
-              <HiOutlineChatAlt2 className='text-white text-2xl ' />
-            </p>
-            <div>
-              <h2 className='text-just font-semibold text-lg'>Corporate Law</h2>
-              <p className='text-gray-300 py-1'>
-                Far far away, behind the word mountains, far from the countries
-              </p>
-            </div>
-          </div>
-          <div className='flex gap-4 mb-4'>
-            <p className='inline-block bg-[#5F5F65] self-center rounded-full p-4'>
-              <ImTarget className='text-white text-2xl ' />
-            </p>
-            <div>
-              <h2 className='text-just font-semibold text-lg'>Criminal Law</h2>
-              <p className='text-gray-300 py-1'>
-                Far far away, behind the word mountains, far from the countries
-              </p>
-            </div>
-          </div>
+      <Practice />
+      <Counter />
+      <main className='bg-[#2D2D34] py-[5rem] lg:py-[8rem] px-[2rem] xl:px-[12rem] '>
+        <h1 className='text-white text-3xl lg:text-5xl'>
+          <span className='text-just font-bold'>Happy</span> Clients
+        </h1>
+        <div className='grid lg:grid-cols-3 gap-8 my-8 '>
+          <ClientCard />
+          <ClientCard />
+          <ClientCard />
         </div>
       </main>
+      {/* <Expertise /> */}
+      <main className='bg-[#37373F]  py-[5rem] lg:py-[8rem] px-[2rem] xl:px-[12rem] '>
+        <h1 className='text-white mb-10 text-3xl lg:text-5xl'>
+          More <span className='text-just font-bold'>Expertise</span>
+        </h1>
+        <div className='grid lg:grid-cols-4 gap-8 my-6 '>
+          <ExpertiseCard
+            title='Labor and Employment'
+            icon={<RiSuitcaseLine className='text-white' />}
+          />
+          <ExpertiseCard
+            title='Corporate & Civil Litigation'
+            icon={<FiTarget className='text-white' />}
+          />
+          <ExpertiseCard
+            title='Intellectual Proerty Law'
+            icon={<BiTargetLock className='text-white' />}
+          />
+          <ExpertiseCard
+            title='Criminal Prosecution and Defense'
+            icon={<GiChessRook className='text-white' />}
+          />
+        </div>
+      </main>
+      <CallUs />
     </>
   );
 };
