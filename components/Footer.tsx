@@ -59,7 +59,10 @@ export default function Footer() {
       <div>
         <h1 className='text-white text-xl mb-4 '>Contact</h1>
         <ul>
-          <li className='text-white'>43 Raymouth Rd. Baltemoer, London 3910</li>
+          <li className='text-white'>
+            43 Raymouth Rd. Baltemoer,
+            <br /> London 3910
+          </li>
           <li className='text-just'>info@justice</li>
           <li className='text-just'>+98 9495949090</li>
         </ul>

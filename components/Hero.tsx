@@ -17,8 +17,10 @@ export default function Hero() {
         className=''
       >
         <h1 className=' text-5xl lg:text-6xl'>
-          <span className='text-just font-extrabold'>We Fight</span> For <br />{' '}
-          Your Right
+          <span className='text-just font-extrabold leading-relaxed '>
+            We Fight
+          </span>{' '}
+          For <br /> Your Right
         </h1>
         <button className='bg-just rounded-full text-white font-semibold py-2 px-4 mt-8'>
           FREE CONSULTATION
