@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { HiArrowNarrowRight } from 'react-icons/hi';
+import { motion } from 'framer-motion';
 
 type cardType = {
   img: String | any;
@@ -8,7 +9,17 @@ type cardType = {
 
 export default function TeamCard({ img }: cardType) {
   return (
-    <div className='mb-8 flex text-center lg:block flex-col justify-center items-center'>
+    <motion.div
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 30 },
+      }}
+      className='mb-8 flex text-center lg:block flex-col justify-center items-center'
+    >
       <div>
         <Image
           src={img}
@@ -33,6 +44,6 @@ export default function TeamCard({ img }: cardType) {
           <HiArrowNarrowRight className='group-hover:bg-just inline rounded-sm group-hover:text-white' />{' '}
         </span>
       </p>
-    </div>
+    </motion.div>
   );
 }

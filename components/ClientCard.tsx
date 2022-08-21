@@ -1,10 +1,21 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 import client from '../public/xperson.webp';
 
 export default function ClientCard() {
   return (
-    <div className='mb-4'>
+    <motion.div
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true }}
+      transition={{ duration: 1, delay: 0.1 }}
+      variants={{
+        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0, x: -50 },
+      }}
+      className='mb-4'
+    >
       <p className='bg-white p-4 rounded-lg'>
         Far far away, behind the word mountains, far from the countries Vokalia
         and Consonantia, there live the blind texts. Separated they live in.
@@ -25,6 +36,6 @@ export default function ClientCard() {
           <span className='block text-gray-400'> CEO, Co-Founder</span>
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
