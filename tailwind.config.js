@@ -11,7 +11,7 @@ module.exports = {
         'just': "#B49C73"
       },
       backgroundImage: {
-        'law': "url('https://preview.colorlib.com/theme/justice/images/xhero_bg.jpg.pagespeed.ic.CFJ3OI4rtp.webp') "
+        'law': "url('https://preview.colorlib.com/theme/justice/images/hero_bg.jpg.webp') "
       },
       backgroundPosition: {
         'center-4': '-50vw '
